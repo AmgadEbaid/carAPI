@@ -1,0 +1,39 @@
+GET http://localhost:3000/auth/whoami
+
+###sinin
+POST  http://localhost:3000/auth/sinin
+content-type: application/json
+
+{ "email":"user1@gmail.com", "password":"user"}
+### logout
+POST  http://localhost:3000/auth/logout
+content-type: application/json
+
+
+
+
+### sinup
+POST  http://localhost:3000/auth/sinup
+content-type: application/json
+
+{ "email":"user1@gmail.com", "password":"user"}
+### send a report 
+POST  http://localhost:3000/r/rc
+content-type: application/json
+
+{ 
+    "make":"ford",
+    "modle":"mustang",
+    "year":1999,
+    "milnumber":10020,
+    "lng":49,
+    "lat":39,
+    "price":20000
+}
+###  changeApproveal
+PATCH   http://localhost:3000/r/24
+content-type: application/json
+
+{ "approved":true}
+### get estmate
+GET http://localhost:3000/r?make=ford&modle=mustang&year=1999&milnumber=10020&lng=44&lat=39
