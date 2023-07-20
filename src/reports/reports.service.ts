@@ -33,7 +33,7 @@ export class ReportsService {
       .andWhere('lat-:lat BETWEEN -5 AND 5', { lat })
       .andWhere('lng-:lng BETWEEN -5 AND 5 ', { lng })
       .andWhere('approved IS TRUE')
-      .orderBy('id', 'DESC')
+      .orderBy('price', 'DESC')
       .getRawMany();
   }
 }
