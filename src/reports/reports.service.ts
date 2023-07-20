@@ -25,7 +25,7 @@ export class ReportsService {
 
   createEstimate({ year, lat, lng, make, modle, milnumber }: EstmateReportDto) {
     return this.repo
-      .createQueryBuilder()
+      .createQueryBuilder("reports")
       .select('AVG(price)', 'price')
       .where('make=:make', { make })
       .andWhere('year-:year BETWEEN -5 AND 5 ', { year })
@@ -33,7 +33,7 @@ export class ReportsService {
       .andWhere('lat-:lat BETWEEN -5 AND 5', { lat })
       .andWhere('lng-:lng BETWEEN -5 AND 5 ', { lng })
       .andWhere('approved IS TRUE')
-      .orderBy('milnumber', 'DESC')
+      .orderBy('id', 'DESC')
       .getRawMany();
   }
 }
